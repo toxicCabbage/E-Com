@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temp</title>
+</head>
+<body>
+    <form action="" th:object = "${info}" th:action = "@{/cart}">
+        <input type="text" name="id" id="" th:field = "*{userId}">
+        <input type="text" name="pid" id="" th:field = "*{productId}">
+        <button type="submit">add to cart</button>
+        </form>
+   
+</body>
+</html>

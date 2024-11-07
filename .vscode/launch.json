@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CrashApplication<crash>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.trashcode.crash.CrashApplication",
+            "projectName": "crash",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

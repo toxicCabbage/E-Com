@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <!-- <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">  
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <script src="" th:src ="@{/js/reload.js}"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/profileProduct.css"
+      th:href="@{/css/profileProduct.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="" th:src="@{/js/reload.js}"></script>
+    <div class="header" id="stayAtTop" th:include="header::header"></div>
+    <div class="wrapAll" id="warap">
+      <div class="wrap">
+        <div class="imgSection">
+          <div class="mainImageSec">
+            <div class="slideImg">
+              <div class="simg1" onclick="img1()">
+                <img
+                  src="../static/image/egg.png"
+                  th:src="@{${info.productImgUrl0}}"
+                  alt=""
+                />
+              </div>
+              <div class="simg1" onclick="img2()">
+                <img
+                  src="../static/image/logitec 102c.jpg"
+                  th:src="@{${info.productImgUrl1}}"
+                  alt=""
+                />
+              </div>
+              <div class="simg1" onclick="img3()">
+                <img
+                  src="../static/image/galaxy-z.webp"
+                  th:src="@{${info.productImgUrl2}}"
+                  alt=""
+                />
+              </div>
+              <!-- <div class="simg1">
+                            <img src="../static/image/Logitec.jpg" alt="">
+                        </div> -->
+            </div>
+            <div class="mainImg">
+              <div class="MainImgHolder1 MainImgHolder" id="MainImgHolder1">
+                <img
+                  id="MainImg1"
+                  src="../static/image/egg.png"
+                  th:src="@{${info.productImgUrl0}}"
+                  alt=""
+                />
+              </div>
+              <div class="MainImgHolder2 MainImgHolder" id="MainImgHolder2">
+                <img
+                  id="MainImg2"
+                  src="../static/image/logitec 102c.jpg"
+                  th:src="@{${info.productImgUrl1}}"
+                  alt=""
+                />
+              </div>
+              <div class="MainImgHolder3 MainImgHolder" id="MainImgHolder3">
+                <img
+                  id="MainImg3"
+                  src="../static/image/galaxy-z.webp"
+                  th:src="@{${info.productImgUrl2}}"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="bnc">
+            <a href="#" th:href="@{/u/buy(productID = ${info.productid})}">
+              <button id="buy" th:if="${buy}== true">Buy</button>
+              <button id="buy" th:if="${buy}== false" disabled>Buy</button>
+            </a>
+            <a
+              th:if="${cStatus} =='show'"
+              href="#"
+              th:href="@{/u/cart(productID = ${info.productid})}"
+              ><button id="cart">Add to Cart</button></a
+            >
+
+            <a
+              th:if="${cStatus} =='dont'"
+              href="#"
+              th:href="@{/u/cart(productID = ${info.productid})}"
+              ><button id="cart" disabled>Add to Cart</button></a
+            >
+
+            <a th:if="${cStatus}=='hide'" href="#" th:href="@{/u/goTocart}"
+              ><button id="cart">Go to cart</button></a
+            >
+          </div>
+        </div>
+        <div class="detailSection">
+          <div class="productName" th:text="${info.productName}">
+            <!-- Logitec 102c | 400dpi - 8000dpi | wired -->
+          </div>
+          <div class="productPrice" th:text="|${info.productPrice}  &#8377|">
+            &#8377;
+            <!-- &#8377 1695  -->
+          </div>
+          <div class="delivery">
+            <label for="delivery">Delivery</label>
+            <input type="text" id="delivery" placeholder="Pincode" />
+          </div>
+          <div class="catagory">
+            <label for="catagory">catagory</label>
+            <p th:text="${info.productCate}">ELECTORNI</p>
+          </div>
+
+          <div class="Stock">
+            <label for="catagory">Item Left</label>
+            <p th:text="${info.Stock}">ELECTORNI</p>
+          </div>
+
+          <div class="description">
+            <label for="description">Description</label>
+            <p th:text="${info.miniDes}">
+              <!--                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam maxime libero soluta voluptatem. Suscipit odit iure maxime vitae nam. Quibusdam dolores quo exercitationem ipsam. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <form action="" th:action = "@{/cart}">
+    <button type="submit">add to cart</button>
+    </form> -->
+
+    <script
+      src="../static/js/profileProductImageHandler.js"
+      th:src="@{/js/profileProductImageHandler.js}"
+    ></script>
+  </body>
+</html>

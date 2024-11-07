@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"></html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/productRegistration.css" th:href="@{/css/productRegistration.css}">
+    <title>Add product</title>
+</head>
+<body>
+    <div class="wrapAll">
+    <div class="contant">
+
+        <form action="#" method="POST" th:action = "@{/Seller/save_product}" th:object ="${productEntity}" enctype="multipart/form-data">
+        
+        <div class="contantInner" id="container1">
+            <h3>Add Products</h3>
+        <div class="fields">
+            <label for="productName"> Product Name :</label>
+            <input type="text" th:field="*{productName}" name="productname" id="productName" placeholder=" product name">
+
+            <label for="productPrice"> Product Price :</label>
+            <input type="number" th:field="*{productPrice}" name="proudctprice"  id="productPrice" placeholder=" product price "   min="1">
+
+            <label for="productCate"> Product Catagory :</label>
+            <input type="text" th:field="*{productCate}" name="productcate" id="productCate" placeholder="proudct category">
+
+            <label for="quantity"> Quantity :</label>
+            <input type="number"  th:field="*{stock}" name="quantity" id="quantity" placeholder="Quantity" min="1">
+
+            <label for="miniDes"> Mini Des :</label>
+            <input type="text" th:field="*{miniDes}" name="minides" id="miniDes" placeholder="mini des">
+        </div>
+        <button onclick="block2()">Next</button>
+    </div>
+
+<!-- second section -->
+
+<div class="contantInner" id="container2">
+
+    <h3>Add Products Image</h3>
+
+    <div class="fields">
+        <label for="productImg1"> Product Picture1 :</label>
+        <input type="file" name="Picture1" id="productImg1" accept="image/png, image/jpeg, image/webp" required >
+
+        <label for="productImg2"> Product Picture2 :</label>
+        <input type="file" name="Picture2" id="productImg2" accept="image/png, image/jpeg, image/webp" required >
+        
+        <label for="productImg3"> Product Picture3 :</label>
+        <input type="file" name="Picture3" id="productImg3" accept="image/png, image/jpeg, image/webp" required >
+
+        <button onclick="block1()">Prev</button>
+        <button type="submit">submit</button>
+    </div>
+    
+</div>
+    </form>
+    </div>
+    </div>
+
+
+    <script src="../static/js/productRegistration.js"  th:src="@{/js/productRegistration.js}"></script>
+</body>
+</html>

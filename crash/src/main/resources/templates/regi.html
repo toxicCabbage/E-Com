@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      th:href="@{/css/regi.css}"
+      href="../static/css/regi.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <!-- contant -->
+    <div class="wrapDiv">
+      <div class="Regi">
+        <!-- <form th:action="@{/saveUser}" th:object="${userInfo}" method="POST">
+                    <input type="text" th:field = "*{name}" >
+                    <button type="submit"></button>
+                </form> -->
+
+        <!-- regi From -->
+        <form
+          action="#"
+          th:action="@{/saveUser}"
+          th:object="${userInfo}"
+          method="POST"
+          class="formRegi"
+          name="regiForm"
+        >
+          <div id="ferror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="firstName">Name :</label>
+            <input
+              type="text"
+              th:field="*{name}"
+              placeholder="Name"
+              id="firstName"
+            />
+          </div>
+          <div id="lerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="secondName">Last Name :</label>
+            <input
+              type="text"
+              th:field="*{lname}"
+              name="secondName"
+              id="secondName"
+            />
+          </div>
+          <div id="uerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="username">User Name :</label>
+            <input
+              type="text"
+              th:field="*{username}"
+              placeholder="username"
+              id="userName"
+            />
+          </div>
+
+          <input type="hidden" name="Role" value="USER" />
+
+          <div id="merror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="mobileNumber">Mobile Number :</label>
+            <input
+              type="text"
+              th:field="*{mobile_no}"
+              name="mobileNumber"
+              id="mobileNumber"
+              aria-required="true"
+            />
+          </div>
+
+          <div id="eerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="emailAddress">Email :</label>
+            <input
+              type="text"
+              th:field="*{Email}"
+              name="emailAddress"
+              id="emailAddress"
+            />
+          </div>
+
+          <div id="gerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="Gender">Gender :</label>
+            <select th:field="*{Gender}" name="Gender" id="Gender">
+              <option value="Select">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div id="laerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="landMark">landMark</label>
+            <input
+              type="text"
+              th:field="*{landmark}"
+              name="landMark"
+              id="landMark"
+            />
+          </div>
+
+          <div id="aerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="Area">Area :</label>
+            <input type="text" th:field="*{area}" name="Area" id="Area" />
+          </div>
+
+          <div id="derror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="District">District :</label>
+            <input
+              type="text"
+              th:field="*{district}"
+              name="District"
+              id="District"
+            />
+          </div>
+
+          <div id="serror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="State">State :</label>
+            <input type="text" th:field="*{state}" name="State" id="State" />
+          </div>
+
+          <div id="cerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="County">County :</label>
+            <input type="text" th:field="*{County}" name="County" id="County" />
+          </div>
+
+          <div id="perror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="passWord">Password :</label>
+            <input
+              type="password"
+              th:field="*{password}"
+              name="passWord"
+              id="passWord"
+            />
+          </div>
+
+          <div id="conerror" class="error"></div>
+
+          <div class="fieldaWrap">
+            <label for="conformPassword">Re-Enter Password :</label>
+            <input
+              type="password"
+              name="conformPassword"
+              id="conformPassword"
+            />
+          </div>
+
+          <div class="fieldaWrap">
+            <button type="button">Clear</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="errorHandler">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio aut, quidem esse suscipit sint optio repellendus omnis veritatis, repellat aliquam delectus earum magni eligendi blanditiis. Modi minima necessitatibus fugit voluptates!
+            </div> -->
+    </div>
+    <!-- End Contant -->
+
+    <footer></footer>
+    <!-- <script th:src="@{/js/regi.js}" src="../static/js/regi.js"></script> -->
+    <script th:src="@{/js/reg.js}" src="../static/js/reg.js"></script>
+  </body>
+</html>

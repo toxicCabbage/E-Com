@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../static/css/SellerProducts.css" 
+      th:href="@{/css/SellerProducts.css}"
+    /> -->
+    <link
+    rel="stylesheet"
+    href="../static/css/AllProduct.css"
+    th:href="@{/css/AllProduct.css}"
+  />
+  
+    <title>seller all product</title>
+  </head>
+  <body>
+    <div class="Navigation" id="stayAtTop" th:include="SellerHeader::SellerHeader"></div>
+
+    <div class="sorting">
+      <span>Sort by : </span>
+      <a
+        href="#"
+        th:href="@{'/Seller/SellerProducts/'+ ${currentPage} + '?sortField=productName&sortDir=' + ${asc}}"
+        >Name a - z</a
+      >
+      <a
+        href="#"
+        th:href="@{'/Seller/SellerProducts/'+ ${currentPage} + '?sortField=productName&sortDir=' + ${desc}}"
+        >Name z - a</a
+      >
+      <a
+        href="#"
+        th:href="@{'/Seller/SellerProducts/'+ ${currentPage} + '?sortField=productPrice&sortDir=' + ${asc}}"
+        >Price Low to High</a
+      >
+      <a
+        href="#"
+        th:href="@{'/Seller/SellerProducts/'+ ${currentPage} + '?sortField=productPrice&sortDir=' + ${desc}}"
+        >Price High to Low</a
+      >
+    </div>
+    <div class="mainBody">
+
+         <div class="Inner-main" th:each="info: ${prouctInfo}">
+           <div class="contant">
+             <div class="productImage item"><img src="../static/image/smart watch.webp" th:src="@{${info.productImgUrl0}}" alt=""></div>
+              <div class="productDetail item">
+               <span id="productName" th:text ="${info.productName}" >Realme SmartWatch</span>
+               <span id="catagory" th:text ="${info.productCate}">SellerProducts</span>
+               <span id="Seller">Realme</span>
+             </div>
+             <div class="prouctPrice item" th:text="${info.productPrice}">&#8377 4999</div>
+             <div class="ViewButton item"><a href="#" th:href="@{/Seller/editProduct/{pId}(pId=${info.productid})}">View</a></div>
+            <div class="DeleteButton item"><a href="#" >Delete</a></div>
+            <!-- th:href="@{/DeleteProductSeller/{pId}(pId=${info.productid})}" -->
+           </div>
+         </div>
+
+         <!-- <div class="Inner-main">
+          <div class="contant">
+            <div class="productImage item"><img src="../static/image/smart watch.webp" alt=""></div>
+             <div class="productDetail item">
+              <span id="productName">Realme SmartWatch</span>
+              <span id="catagory">SellerProducts</span>
+              <span id="Seller">Realme</span>
+            </div>
+            <div class="prouctPrice item">&#8377 4999</div>
+            <div class="ViewButton item"><a href="#">View</a></div>
+            <div class="ReportButton item"><a href="#">Report</a></div>
+           <div class="DeleteButton item"><a href="#">Delete</a></div>
+          </div>
+        </div> -->
+    </div>
+    <div class="indexOuter">
+      <div class="index">
+        <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+          <a
+            href="#"
+            th:if="${currentPage != i}"
+            th:href="@{'/Seller/SellerProducts/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">[[${i}]]</div></a
+          >
+          <a href="#" th:if="${currentPage == i}"
+            ><div class="indexBlock">[[${i}]]</div></a
+          >
+        </span>
+
+        <span>
+          <a
+            href="#"
+            th:if="${currentPage < totalPages}"
+            th:href="@{'/Seller/SellerProducts/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">N</div></a
+          >
+          <a href="#" th:unless="${currentPage < totalPages}"
+            ><div class="indexBlock">N</div></a
+          >
+        </span>
+
+        <span>
+          <a
+            href="#"
+            th:if="${currentPage > 1}"
+            th:href="@{'/Seller/SellerProducts/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">P</div></a
+          >
+          <a href="#" th:unless="${currentPage > 1}"
+            ><div class="indexBlock">P</div></a
+          >
+        </span>
+      </div>
+    </div>
+    <script
+    src="../static/js/alert.js"
+    th:src="@{/js/SellerHeader.js}"
+  ></script>
+  </body>
+</html>

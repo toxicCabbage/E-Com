@@ -1,0 +1,381 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+body {
+  background-color: black;
+}
+
+header {
+  width: 100%;
+  height: 4rem;
+  background-color: rgba(48, 52, 59);
+  display: flex;
+  justify-content: center;
+}
+
+.innerHeader {
+  max-width: 1800px;
+  width: 1600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.he {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+.logo span {
+  color: tomato;
+  font-style: 1.5;
+  font-weight: 900;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.insideSearchBar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form.insideSearchBar input[type="text"] {
+  width: 80%;
+  height: 40%;
+  font-style: 2;
+  /* border: red 2px solid; */
+}
+
+.insideSearchBar button {
+  width: 6%;
+  height: 47%;
+}
+.insideSearchBar svg {
+  fill: white;
+  width: 100%;
+  height: 100%;
+}
+
+.icons {
+  fill: white;
+}
+
+/* body area */
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+      180deg,
+      rgba(48, 52, 59, 1) 12%,
+      rgba(48, 52, 59, 0.0033147047881653124) 50%,
+      rgba(0, 0, 0, 0.5719421557685574) 87%,
+      rgba(0, 0, 0, 1) 95%
+    ),
+    url(../../templates/img/plan.jpg);
+}
+
+.background img {
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  z-index: -1;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+}
+
+.name {
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px;
+}
+
+.headerCont {
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 20%;
+  margin-left: 20%; */
+  font-family: "Anton", sans-serif;
+  color: white;
+  font-size: 1.9rem;
+}
+
+#dep {
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.handle {
+  width: 50%;
+  height: 100%;
+}
+
+.detailSection {
+  width: 100%;
+  height: 400px;
+  /* background-color: red; */
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(30, 30, 30, 1) 41%,
+    rgba(32, 32, 32, 1) 100%
+  );
+}
+
+.innerDetailSection {
+  width: 1200px;
+  height: 300px;
+  min-width: 800px;
+  /* background-color: green; */
+  color: white;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-around;
+  align-items: center;
+}
+
+.item {
+  width: 260px;
+  height: 250px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.smallSection {
+  width: 250px;
+  height: 100px;
+  border-radius: 5px;
+  /* background-color: red; */
+  border-color: rgba(245, 245, 245, 0.377);
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-; */
+  align-items: center;
+}
+
+#split {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.smallHeader {
+  display: flex;
+  width: 250px;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: yellow; */
+  font-family: "Roboto", sans-serif;
+}
+
+.saprator {
+  width: 200px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.smallFooter {
+  height: 50px;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  font-size: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.Edit {
+  fill: white;
+  width: 20px;
+}
+
+.largSection {
+  width: 250px;
+  height: 220px;
+  border-color: rgba(245, 245, 245, 0.377);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.largHeader {
+  /* background-color: yellow; */
+  height: 50px;
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+.largFooter {
+  font-family: "Roboto", sans-serif;
+  width: 210px;
+  padding-top: 8px;
+  font-size: auto;
+}
+
+.largImg {
+  width: 250px;
+  height: 220px;
+  border-color: rgba(245, 245, 245, 0.377);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.largImg img {
+  width: 80%;
+}
+
+#editProfile {
+  position: absolute;
+  /* background-color: red; */
+  margin-left: 170px;
+  margin-top: -150px;
+}
+
+.wrapAll {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(63, 63, 63, 0.616);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  visibility: hidden;
+}
+
+.fields {
+  border-radius: 5px;
+  width: 300px;
+  height: 150px;
+  background-color: #202020;
+  /* display: flex;
+  justify-content: start; */
+}
+.fields form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fields label {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#sub {
+  width: 70px;
+  height: 30px;
+}
+
+/* #cross {
+  fill: white;
+  width: 12px;
+} */
+
+.cross {
+  fill: white;
+  width: 23px;
+}
+
+#close {
+  position: absolute;
+  margin-left: 325px;
+  margin-top: -170px;
+}
+
+.cross :hover {
+  fill: red;
+}
+
+.upForm {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.432);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+#upform :hover {
+}
+
+.updatePasswordForm {
+  box-shadow: 0 0 100px rgb(255, 255, 255);
+  width: 400px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #202020;
+  border-radius: 5px;
+  border-width: 0.1px;
+  border-style: solid;
+  border-color: #202020;
+}
+.fieldse {
+  font-size: 10px;
+  background-color: transparent;
+  height: 20px;
+  width: 300px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fields label {
+  font-size: 16px;
+}
+
+#closeUPF {
+  position: absolute;
+  margin-left: 435px;
+  margin-top: -350px;
+}
+h2 {
+  color: white;
+}

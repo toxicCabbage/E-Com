@@ -1,0 +1,102 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.wrapAll {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 90vh;
+  background-color: rgba(63, 63, 63, 0.726);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  visibility: hidden;
+}
+.fields {
+  box-shadow: 0 0 100px rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 300px;
+  height: 150px;
+  background-color: #202020;
+}
+.fields form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fields label {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#sub {
+  width: 70px;
+  height: 30px;
+}
+
+/* #cross {
+    fill: white;
+    width: 12px;
+  } */
+
+.cross {
+  fill: white;
+  width: 23px;
+}
+
+#close {
+  position: absolute;
+  margin-left: 325px;
+  margin-top: -170px;
+}
+
+.cross :hover {
+  fill: red;
+}
+
+.UpdatePic {
+  visibility: hidden;
+}
+.outWrap {
+  width: 100vw;
+  height: 105vh;
+  background-color: rgba(114, 111, 111, 0.685);
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.innerWrap {
+  box-shadow: 0 0 100px rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  width: 300px;
+  height: 160px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#closeName {
+  position: absolute;
+  margin-top: -200px;
+  margin-left: 320px;
+}
+
+#closeName :hover {
+  fill: red;
+}

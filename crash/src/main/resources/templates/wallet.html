@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="../static/css/wallet.css"
+      th:href="@{/css/Wallet.css}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.css"
+      th:href="@{/jquery-ui/jquery-ui.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.structure.css"
+      th:href="@{/jquery-ui/jquery-ui.structure.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.theme.css"
+      th:href="@{/jquery-ui/jquery-ui.theme.css}"
+    />
+
+    <title>Wallet</title>
+  </head>
+  <body>
+    <div class="header" id="stayAtTop" th:include="header::header"></div>
+    <div class="wrapAll">
+      <div class="wrap">
+        <div class="headerSection">
+          <div class="amount" th:text="${wallet.amount}">1324 $</div>
+          <div class="addAmount" onclick="shoowFrom()">+ Add amount</div>
+        </div>
+
+        <div class="transactionHeader">transaction Details</div>
+        <div class="transaction" th:each="info : ${transactions}">
+          <img
+            src="../static/image/egg.png"
+            th:src="@{${info.imageUrl}}"
+            alt=""
+            id="image"
+          />
+          <p id="transactionDetail" th:text="${info.transactionDetail}">
+            Fund Added
+          </p>
+          <p id="transactionId" th:text="${info.transactionId}">ffdf4r43xdd</p>
+          <p id="trasactionAmound" th:text="${info.transactionAmount}">$3400</p>
+        </div>
+      </div>
+      <div class="formwrap" id="formwrap">
+        <form id="form" action="#" method="post" th:action="@{/u/addMoney}">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            class="cross"
+            onclick="hideFrom()"
+          >
+            <title>cross</title>
+            <path
+              d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"
+            ></path>
+          </svg>
+
+          <p id="one">Add Money to</p>
+          <p id="two">Wallet</p>
+          <p id="three">Available Balance</p>
+          <p id="currentBlance">1244$</p>
+          <input id="moneyInput" name="money" type="number" min="0" />
+          <button id="submitButton" type="submit">Proceed to Add Money</button>
+        </form>
+      </div>
+    </div>
+    <script src="../static/js/wallet.js" th:src="@{/js/wallet.js}"></script>
+  </body>
+</html>

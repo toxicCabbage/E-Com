@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="../static/css/cart.css"
+      th:href="@{/css/cart.css}"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <link
+      rel="stylesheet"
+      href="../static/css/AllUser.css"
+      th:href="@{/css/AllUser.css}"
+    />
+
+    <link
+    rel="stylesheet"
+    href="../static/css/sellerHeader.css"
+    th:href="@{/css/sellerHeader.css}"
+  />
+    <title>All user</title>
+  </head> 
+  <body>
+    <div
+      class="Navigation"
+      id="stayAtTop"
+      th:include="AdminHeader::Adminheader"
+    ></div>
+
+    <!-- <div class="sorting">
+      <span>Sort by : </span>
+      <a
+        href="#"
+        th:href="@{'/a/allUser/'+ ${currentPage} + '?sortField=username&sortDir=' + ${asc}}"
+        >Name a - z</a
+      >
+      <a
+        href="#"
+        th:href="@{'/a/allUser/'+ ${currentPage} + '?sortField=username&sortDir=' + ${desc}}"
+        >Name z - a</a
+      >
+
+    </div> -->
+
+
+
+
+    <div class="mainBody">
+
+      <div class="Inner-main heading" >
+        <div class="contant">
+          <div class="SellerImage item">
+            Product
+          </div>
+
+          <div class="UserName item" 
+          >Product Name</div>
+
+          <div class="State item"  
+          
+          >Customer</div>
+
+          <div class="UserName item"
+          >Product Name</div>
+
+          <div class="State item"  
+          
+          >Seller</div>
+          
+          <div class="UserName item" 
+          >Date</div>
+
+          <div class="State item" >State</div>
+          <!-- <div class="Mamber" th:text="${info.roles.Role}">Premium</div> -->
+          <!-- th:text="|${info.productPrice}  &#8377|" -->
+        </div>
+      </div>
+
+
+
+
+      <div class="Inner-main" th:each="info: ${Info}">
+        <div class="contant">
+          <div class="SellerImage item">
+            <img
+              src="../static/image/smart watch.webp"
+           th:src="@{${info.product.productImgUrl0}}"
+
+              alt=""
+            />
+          </div>
+          <div class="UserName item" th:text="${info.product.productName}"
+          >Fake User</div>
+
+          <div class="State item"  
+          th:text="| Cus: ${info.user.name} |"
+          >Bhopal</div>
+
+          <div class="UserName item" th:text="${info.product.productName}"
+          >Fake User</div>
+
+          <div class="State item"  
+          th:text="| Sell: ${info.sellerName} |"
+          >Bhopal</div>
+          
+          <div class="UserName item" th:text= "${#temporals.format(info.OrderOn, 'dd-MM-yyyy HH:mm')}"
+          >Fake User</div>
+
+          <div class="State item" th:text="${info.user.state}">Bhopal</div>
+          <!-- <div class="Mamber" th:text="${info.roles.Role}">Premium</div> -->
+          <!-- th:text="|${info.productPrice}  &#8377|" -->
+        </div>
+      </div>
+
+    </div>
+
+
+    
+    <!-- <div class="indexOuter">
+      <div class="index">
+        <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+          <a
+            href="#"
+            th:if="${currentPage != i}"
+            th:href="@{'/allUser/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">[[${i}]]</div></a
+          >
+          <a href="#" th:if="${currentPage == i}"
+            ><div class="indexBlock">[[${i}]]</div></a
+          >
+        </span>
+
+        <span>
+          <a
+            href="#"
+            th:if="${currentPage < totalPages}"
+            th:href="@{'/allUser/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">N</div></a
+          >
+          <a href="#" th:unless="${currentPage < totalPages}"
+            ><div class="indexBlock">N</div></a
+          >
+        </span>
+
+        <span>
+          <a
+            href="#"
+            th:if="${currentPage > 1}"
+            th:href="@{'/allUser/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+            ><div class="indexBlock">P</div></a
+          >
+          <a href="#" th:unless="${currentPage > 1}"
+            ><div class="indexBlock">P</div></a
+          >
+        </span>
+      </div>
+    </div> -->
+  </body>
+</html>

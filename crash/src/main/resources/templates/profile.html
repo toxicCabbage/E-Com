@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link th:href="@{/css/regi.css}" href="../static/css/regi.css" rel="stylesheet" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/profile.css"
+      th:href="@{/css/profile.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.css"
+      th:href="@{/jquery-ui/jquery-ui.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.structure.css"
+      th:href="@{/jquery-ui/jquery-ui.structure.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.theme.css"
+      th:href="@{/jquery-ui/jquery-ui.theme.css}"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header" id="stayAtTop" th:include="header::header"></div>
+
+    <!-- Body Containtant -->
+
+    <div class="background">
+      <img
+        src="img/plan.jpg"
+        th:src="@{${userInfo.profileBGPic}}"
+        alt=""
+        srcset=""
+      />
+      <!-- <span>coder</span>
+    <br>
+     <span id="userName" >Nitesh</span> -->
+      <div class="fill">
+        <div class="name">
+          <div class="headerCont">
+            <span id="dep">user</span>
+            <span id="userName" th:text="${userInfo.username}">Nitesh</span>
+          </div>
+        </div>
+
+        <div class="handle"></div>
+        <span id="editBGProfile" onclick="addBGPic()">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            class="Edit"
+          >
+            <title>Edit background Picture</title>
+            <path
+              d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+            ></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="detailSection">
+      <div class="innerDetailSection">
+        <div class="item">
+          <div class="largImg">
+            <img
+              src="./img/85234.png"
+              th:src="@{${userInfo.profilePic}}"
+              alt=""
+              srcset=""
+            />
+            <span id="editProfile" onclick="addPic()">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                class="Edit"
+              >
+                <title>Edit</title>
+                <path
+                  d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div id="split" class="item">
+          <div class="smallSection">
+            <div class="smallHeader">
+              <span>Name</span>
+              <span>
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="Edit"
+                >
+                  <title>Edit</title>
+                  <path
+                    d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="saprator"></div>
+            <div class="smallFooter" id="UserName" th:text="${userInfo.name}">
+              Nitesh
+            </div>
+          </div>
+          <div class="smallSection">
+            <div class="smallHeader">
+              <span>Password</span>
+              <span onclick="PasswrodBloack()">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="Edit"
+                >
+                  <title>Edit</title>
+                  <path
+                    d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="saprator"></div>
+            <div class="smallFooter" id="UserName">******************</div>
+          </div>
+        </div>
+        <div id="split" class="item">
+          <div class="smallSection">
+            <div class="smallHeader">
+              <span>Email</span>
+              <span>
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="Edit"
+                >
+                  <title>Edit</title>
+                  <path
+                    d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="saprator"></div>
+            <div class="smallFooter" id="UserName" th:text="${userInfo.Email}">
+              <!-- near by pluto toward jupitor right behing mars -->
+            </div>
+          </div>
+          <div class="smallSection">
+            <div class="smallHeader">
+              <span>Mobile NO </span>
+              <span>
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="Edit"
+                >
+                  <title>Edit</title>
+                  <path
+                    d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="saprator"></div>
+            <div
+              class="smallFooter"
+              id="UserName"
+              th:text="${userInfo.mobile_no}"
+            >
+              96696495892
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="largSection">
+            <div class="largHeader">
+              <span>Address</span>
+              <span>
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  class="Edit"
+                >
+                  <title>Edit</title>
+                  <path
+                    d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+            <div class="saprator"></div>
+            <div class="largFooter" id="UserName" th:text="${userAddress}">
+              Street: 5084, Main Bazar City: Delhi State/province/area: Delhi
+              Phone number 23561165 Zip code 110055 Country calling code +91
+              Country India
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapAll" id="wrapALL">
+      <span id="close" onclick="helo()">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          class="cross"
+        >
+          <title>cross</title>
+          <path
+            d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"
+          ></path>
+        </svg>
+      </span>
+      <div class="fields">
+        <form
+          action="#"
+          method="post"
+          th:action="@{/u/addPic}"
+          enctype="multipart/form-data"
+          class="addProfilePicForm"
+        >
+          <input type="hidden" name="term" value="profilePic" />
+          <label for="profilePic"> Profile Picture :</label>
+
+          <input
+            type="file"
+            name="profilePic"
+            id="profilePic"
+            accept="image/png,
+          image/jpeg"
+          />
+          <button type="submit" id="sub">submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- ADDing BACKGROUND PICTURE  -->
+
+    <div class="wrapAll" id="wrapALLbg">
+      <span id="close" onclick="hideBg()">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          class="cross"
+        >
+          <title>cross</title>
+          <path
+            d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"
+          ></path>
+        </svg>
+      </span>
+
+      <div class="fields">
+        <form
+          action="#"
+          method="post"
+          th:action="@{/u/addPic}"
+          enctype="multipart/form-data"
+          class="addBGPicForm"
+        >
+          <input type="hidden" name="term" value="BGPic" />
+          <label for="BGPic"> BACKGROUND Picture :</label>
+
+          <input
+            type="file"
+            name="profilePic"
+            id="BGPic"
+            accept="image/png,
+          image/jpeg"
+          />
+          <button type="submit" id="sub">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- UPDATE PASSWORD -->
+    <div class="upForm" id="upform">
+      <form
+        action="#"
+        class="updatePasswordForm"
+        method="post"
+        th:action="@{/u/UpdatePassword}"
+      >
+        <h2>Change Password</h2>
+        <div class="fieldse">
+          <label for="currentPassword">Current Password </label>
+          <input
+            type="password"
+            name="oldPassword"
+            id="currentPassword"
+            placeholder="Current password"
+          />
+        </div>
+        <div class="fieldse">
+          <label for="newPassword">New Password</label>
+          <input
+            type="password"
+            name="newPassword"
+            id="newPassword"
+            placeholder="New password"
+          />
+        </div>
+        <div class="fieldse">
+          <label for="repeatPassword">Repeat Password</label>
+          <input
+            type="password"
+            name="reapeatPassword"
+            id="repeatPassword"
+            placeholder="re enter your password"
+          />
+        </div>
+        <button type="submit">change Password</button>
+      </form>
+      <span id="closeUPF" onclick="hidePasswordBloack()">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          class="cross"
+        >
+          <title>cross</title>
+          <path
+            d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"
+          ></path>
+        </svg>
+      </span>
+    </div>
+    <script src="../static/js/profile.js" th:src="@{/js/profile.js}"></script>
+    <script src="../static/js/test.js" th:src="@{/js/test.js}"></script>
+    <script
+      src="../static/js/UpdatePassword.js"
+      th:src="@{/js/UpdatePassword.js}"
+    ></script>
+    <!-- th:src="@{/js/productRegistration.js}" -->
+  </body>
+</html>

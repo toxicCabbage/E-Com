@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="../static/css/cart.css"
+      th:href="@{/css/cart.css}"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/css/checkout.css"
+      th:href="@{/css/checkout.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+    <title>Cart</title>
+  </head>
+  <body>
+    <!-- <script src="" th:src ="@{/js/reload.js}"></script> -->
+    <!-- <div class="wrapAll" >
+        <div class="cartHeader"> <span id="header">Cart</span> </div>
+            <div class="items" th:each = "info : ${cartEntity}">
+                <div class="productImage"><img src="../static/image/Logitec.jpg" th:src = "@{${info.productImgUrl0}}" alt=""></div>
+                <div class="details">
+                    <span id="productName" th:text = "${info.productName}" > sample text</span>
+                    <span id="Higilight" th:text = "${info.miniDes}"> </span>
+                    <span id="sellerName">balaji Retail</span>
+                    <span id="price" th:text = "${info.productPrice}">&#8377 </span>
+                </div>
+                <div class="addORremove">
+                    <button id="wishList" th:onclick = "|window.location.href = '/delete/${info.productid}'|">Add to Wishlist</button>
+                    <button id="remove">Remove</button>
+                </div>
+            </div>
+        
+    </div> -->
+
+    <div class="header" id="stayAtTop" th:include="header::header"></div>
+
+    <div class="OuterContainer">
+      <div class="innerContainer">
+        <div class="leftside">
+          <div class="itemsHeader">Cart</div>
+          <div class="items">
+            <div class="item" th:each="info : ${cartEntity}">
+              <a
+                href="#"
+                th:href="@{/productProfile/{pId}(pId = ${info.product.productid})}"
+                id="itemDetails"
+              >
+                <div class="productImage">
+                  <img
+                    src="../static/image/logitec 102c.jpg"
+                    th:src="@{${info.product.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <p id="productName" th:text="${info.product.productName}">
+                    Logitec 101c
+                  </p>
+                  <p id="productDetail" th:text="${info.product.miniDes}">
+                    400-8000 Dpi
+                  </p>
+                  <p id="sellerName" th:text="${info.user.name}">scamer Econ</p>
+                  <p id="Price" th:text="${info.product.productPrice}">1695</p>
+                </div>
+              </a>
+              <div class="Btns">
+                <a
+                  href="#"
+                  th:href="@{/u/removeCartItem/{pId}(pId=${info.product.productid})}"
+                  id="Remove"
+                  >Remove</a
+                >
+              </div>
+            </div>
+            <!-- th:href="@{/addOrder/{pId}(pId=${info.productid})}" -->
+            <!-- <div class="item" th:each="info : ${cartEntity}">
+              <a href="#" id="itemDetails">
+                <div class="productImage">
+                  <img
+                    src="../static/image/logitec 102c.jpg"
+                    th:src="@{${info.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <p id="productName" th:text="${info.productName}">
+                    Logitec 101c
+                  </p>
+                  <p id="productDetail" th:text="${info.miniDes}">
+                    400-8000 Dpi
+                  </p>
+                  <p id="sellerName" th:text="${info.miniDes}">scamer Econ</p>
+                  <p id="Price" th:text="${info.productPrice}">1695</p>
+                </div>
+              </a>
+              <div class="Btns"><a href="#" id="Remove">Remove</a></div>
+            </div> -->
+
+            <!-- demo products -->
+
+            <!-- <div class="item" th:each="info : ${cartEntity}">
+              <a href="#" id="itemDetails">
+                <div class="productImage">
+                  <img
+                    src="../static/image/logitec 102c.jpg"
+                    th:src="@{${info.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <p id="productName" th:text="${info.productName}">
+                    Logitec 101c
+                  </p>
+                  <p id="productDetail" th:text="${info.miniDes}">
+                    400-8000 Dpi
+                  </p>
+                  <p id="sellerName" th:text="${info.miniDes}">scamer Econ</p>
+                  <p id="Price" th:text="${info.productPrice}">1695</p>
+                </div>
+              </a>
+              <div class="Btns"><a href="#" id="Remove">Remove</a></div>
+            </div>
+            <div class="item" th:each="info : ${cartEntity}">
+              <a href="#" id="itemDetails">
+                <div class="productImage">
+                  <img
+                    src="../static/image/logitec 102c.jpg"
+                    th:src="@{${info.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <p id="productName" th:text="${info.productName}">
+                    Logitec 101c
+                  </p>
+                  <p id="productDetail" th:text="${info.miniDes}">
+                    400-8000 Dpi
+                  </p>
+                  <p id="sellerName" th:text="${info.miniDes}">scamer Econ</p>
+                  <p id="Price" th:text="${info.productPrice}">1695</p>
+                </div>
+              </a>
+              <div class="Btns"><a href="#" id="Remove">Remove</a></div>
+            </div>
+            <div class="item" th:each="info : ${cartEntity}">
+              <a href="#" id="itemDetails">
+                <div class="productImage">
+                  <img
+                    src="../static/image/logitec 102c.jpg"
+                    th:src="@{${info.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <p id="productName" th:text="${info.productName}">
+                    Logitec 101c
+                  </p>
+                  <p id="productDetail" th:text="${info.miniDes}">
+                    400-8000 Dpi
+                  </p>
+                  <p id="sellerName" th:text="${info.miniDes}">scamer Econ</p>
+                  <p id="Price" th:text="${info.productPrice}">1695</p>
+                </div>
+              </a>
+              <div class="Btns"><a href="#" id="Remove">Remove</a></div>
+            </div> -->
+
+            <!-- End Demo Products -->
+          </div>
+        </div>
+        <div class="rightside">
+          <p id="summaryHeader">Summary</p>
+          <div class="summary">
+            <div class="fields">
+              <p>Price</p>
+              <p id="totalItems" th:text="${price}">1695</p>
+            </div>
+            <div class="fields">
+              <p>Delivery Charges</p>
+              <p id="DeliveryCharges">150</p>
+            </div>
+          </div>
+          <div class="fields total">
+            <p>Total Price</p>
+            <p th:text="${totalPrice}">1845</p>
+          </div>
+          <div class="checkoutSection">
+            <a href="#" th:href="@{/u/buyAll}">Checkout</a>
+            <a href="#">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!--  -->
+<!-- th:href="@{/addOrder/{pId}(pId=${info.product.productid})}" -->
+<!-- th:href="@{/u/cart(productID = ${info.productid})}" -->

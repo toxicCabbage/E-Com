@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.css"
+      th:href="@{/jquery-ui/jquery-ui.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.structure.css"
+      th:href="@{/jquery-ui/jquery-ui.structure.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.theme.css"
+      th:href="@{/jquery-ui/jquery-ui.theme.css}"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="fullHead" th:fragment="header">
+      <div class="header">
+        <div class="inner-header">
+          <div class="logo">
+            <a id="headerAnchor" href="" th:href="@{/}"
+              >Flash <span>Deal </span></a
+            >
+          </div>
+          <div class="search-block">
+            <form
+              id="searchForm"
+              action="#"
+              th:action="@{/similarProduct}"
+              class="search-bar"
+            >
+              <input
+                type="text"
+                id="searchBar"
+                placeholder="search.........."
+                name="search"
+                class="search"
+                onkeyup="getTheValues()"
+              />
+              <button type="submit" onclick="callme()">
+                <svg
+                  class="search-button"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                >
+                  <title>search</title>
+                  <path
+                    d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="navigation">
+            <a href="#" th:href="@{/u/goTocart}">
+              <svg
+                class="svg"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+              >
+                <title>cart</title>
+                <path
+                  d="M12 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"
+                ></path>
+                <path
+                  d="M32 29c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"
+                ></path>
+                <path
+                  d="M32 16v-12h-24c0-1.105-0.895-2-2-2h-6v2h4l1.502 12.877c-0.915 0.733-1.502 1.859-1.502 3.123 0 2.209 1.791 4 4 4h24v-2h-24c-1.105 0-2-0.895-2-2 0-0.007 0-0.014 0-0.020l26-3.98z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" th:href="@{/u/order}"
+              ><svg
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 489.4 489.4"
+                style="enable-background: new 0 0 489.4 489.4"
+                xml:space="preserve"
+              >
+                <title>Order</title>
+
+                <g>
+                  <path
+                    d="M349,120.8v-16.5C349,46.8,302.2,0,244.7,0S140.4,46.8,140.4,104.3v16.5H64.6v302.8c0,36.3,29.5,65.8,65.8,65.8H359
+               c36.3,0,65.8-29.5,65.8-65.8V120.8H349z M166.1,197.6c-12.2,0-22.1-9.9-22.1-22.1c0-12.2,9.9-22.1,22.1-22.1
+               c12.2,0,22.1,9.9,22.1,22.1C188.2,187.8,178.3,197.6,166.1,197.6z M300.9,120.8H188.5v-16.5c0-31,25.2-56.2,56.2-56.2
+               s56.2,25.2,56.2,56.2V120.8z M323.3,197.6c-12.2,0-22.1-9.9-22.1-22.1c0-12.2,9.9-22.1,22.1-22.1s22.1,9.9,22.1,22.1
+               C345.3,187.8,335.5,197.6,323.3,197.6z"
+                  />
+                </g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+              </svg>
+            </a>
+            <a href="#">
+
+              <svg
+                class="svg"
+                id="userEle"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                onmouseover="setUserListPosi()"
+              >
+                <title>user</title>
+                <path
+                  d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"
+                ></path>
+              </svg>
+
+            </a>
+
+            <a href="#" th:href="@{/u/createWallet}">
+              <svg
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 458.531 458.531"
+                style="enable-background: new 0 0 458.531 458.531"
+                xml:space="preserve"
+              >
+                <title>Wallet</title>
+                <g id="XMLID_830_">
+                  <g>
+                    <g>
+                      <path
+                        d="M336.688,343.962L336.688,343.962c-21.972-0.001-39.848-17.876-39.848-39.848v-66.176
+				c0-21.972,17.876-39.847,39.848-39.847h103.83c0.629,0,1.254,0.019,1.876,0.047v-65.922c0-16.969-13.756-30.725-30.725-30.725
+				H30.726C13.756,101.49,0,115.246,0,132.215v277.621c0,16.969,13.756,30.726,30.726,30.726h380.943
+				c16.969,0,30.725-13.756,30.725-30.726v-65.922c-0.622,0.029-1.247,0.048-1.876,0.048H336.688z"
+                      />
+                      <path
+                        d="M440.518,219.925h-103.83c-9.948,0-18.013,8.065-18.013,18.013v66.176c0,9.948,8.065,18.013,18.013,18.013h103.83
+				c9.948,0,18.013-8.064,18.013-18.013v-66.176C458.531,227.989,450.466,219.925,440.518,219.925z M372.466,297.024
+				c-14.359,0-25.999-11.64-25.999-25.999s11.64-25.999,25.999-25.999c14.359,0,25.999,11.64,25.999,25.999
+				C398.465,285.384,386.825,297.024,372.466,297.024z"
+                      />
+                      <path
+                        d="M358.169,45.209c-6.874-20.806-29.313-32.1-50.118-25.226L151.958,71.552h214.914L358.169,45.209z"
+                      />
+                    </g>
+                  </g>
+                </g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+              </svg>
+            </a>
+            <a href="noti">
+              <svg
+                class="svg"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+              >
+                <title>bell</title>
+                <path
+                  d="M32.047 25c0-9-8-7-8-14 0-0.58-0.056-1.076-0.158-1.498-0.526-3.532-2.88-6.366-5.93-7.23 0.027-0.123 0.041-0.251 0.041-0.382 0-1.040-0.9-1.891-2-1.891s-2 0.851-2 1.891c0 0.131 0.014 0.258 0.041 0.382-3.421 0.969-5.966 4.416-6.039 8.545-0.001 0.060-0.002 0.121-0.002 0.183 0 7-8 5-8 14 0 2.382 5.331 4.375 12.468 4.878 0.673 1.263 2.002 2.122 3.532 2.122s2.86-0.86 3.532-2.122c7.137-0.503 12.468-2.495 12.468-4.878 0-0.007-0.001-0.014-0.001-0.021l0.048 0.021zM25.82 26.691c-1.695 0.452-3.692 0.777-5.837 0.958-0.178-2.044-1.893-3.648-3.984-3.648s-3.805 1.604-3.984 3.648c-2.144-0.18-4.142-0.506-5.837-0.958-2.332-0.622-3.447-1.318-3.855-1.691 0.408-0.372 1.523-1.068 3.855-1.691 2.712-0.724 6.199-1.122 9.82-1.122s7.109 0.398 9.82 1.122c2.332 0.622 3.447 1.318 3.855 1.691-0.408 0.372-1.523 1.068-3.855 1.691z"
+                ></path>
+              </svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="proList" id="userList">
+        <a href="#" th:href="@{/login}">Sign IN</a>
+        <a href="#" th:href="@{/add_user}">Sign UP</a>
+        <a href="#" th:href="@{/logout}">Log Out </a>
+      </div>
+      <!-- blur -->
+      <!-- <div class="blur" id="blur"></div> -->
+      <!-- ENd -->
+      <!-- Side Bar -->
+
+      <!-- Burger menu using svg aniamtion  -->
+      <div class="svgcon" onclick="trigger()" id="bm">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 100 100"
+          style="enable-background: new 0 0 100 100"
+          xml:space="preserve"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: #be1e2d;
+            }
+          </style>
+          <rect id="bar" class="bar st0" x="15" y="30" width="70" height="14" />
+          <rect
+            id="bar1"
+            class="bar1 st0"
+            x="15"
+            y="50"
+            width="70"
+            height="14"
+          />
+          <rect
+            id="bar2"
+            class="bar2 st0"
+            x="15"
+            y="70"
+            width="70"
+            height="14"
+          />
+        </svg>
+      </div>
+
+      <!-- side Bar -->
+      <!-- Sidr Bar -->
+      <div class="sideBar" id="sb">
+        <a href="#" id="profile" th:href="@{/u/profile}">Profile</a>
+        <h3>Trending</h3>
+        <a href="#" th:href = "@{/allProduct}">ALl Product</a>
+        <a href="3">New Arrival</a>
+        <a href="#">Lightning Deal</a>
+        <h3>Categoty</h3>
+        <a href="#" onclick="dropDown()">Fashion</a>
+        <div class="dropDown" id="dropDown">
+          <a href="#">Women</a>
+          <a href="#">Men</a>
+        </div>
+        <a href="#" th:href="@{/electronic}">Electronic</a>
+        <a href="#">Kitchen</a>
+      </div>
+
+      <!-- <script src="../static/js/header.js"></script>  -->
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script> -->
+      <script th:src="@{/js/header.js}" src="../static/js/header.js"></script>
+      <script th:src="@{/js/jquery.js}" src="../static/js/jquery.js"></script>
+      <script
+        th:src="@{/jquery-ui/jquery-ui.js}"
+        src="../static/jquery-ui/jquery-ui.js"
+      ></script>
+      <script
+        th:src="@{/js/autocomplete.js}"
+        src="../static/js/autocomplete.js"
+      ></script>
+      <script
+        th:src="@{/js/searchValidator.js}"
+        src="../static/js/searchValidator.js"
+      ></script>
+    </div>
+  </body>
+</html>

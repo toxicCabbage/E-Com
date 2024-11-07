@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../static/css/AllProduct.css"
+      th:href="@{/css/AllProduct.css}"
+    />
+    <title>Admin</title>
+  </head>
+  <body>
+    <div
+      class="Navigation"
+      id="stayAtTop"
+      th:include="SellerHeader::SellerHeader"
+    ></div>
+    <script
+      src="../static/js/alert.js"
+      th:src="@{/js/SellerHeader.js}"
+    ></script>
+  </body>
+</html>

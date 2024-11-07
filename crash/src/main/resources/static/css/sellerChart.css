@@ -1,0 +1,253 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.mainContext {
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  /* background-color: rgb(247, 204, 172); */
+  background-color: #202020;
+  display: flex;
+  justify-content: center;
+}
+
+.innerContext {
+  width: 1200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(48, 52, 59);
+}
+
+.context {
+  width: 1000px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* background-color: rgb(130, 111, 102); */
+}
+
+.HeaderLayer {
+  width: 100%;
+  height: 50px;
+  background-color: wheat;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#Header {
+  font-family: "Anybody", cursive;
+  font-size: 1.2rem;
+  /* font-weight: 600; */
+  font-family: "Work Sans", sans-serif;
+  margin-left: 20px;
+}
+
+.topLayer {
+  width: 100%;
+  height: 200px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Boxitem {
+  width: 200px;
+  height: 150px;
+  background-color: #393e46;
+  border-radius: 5px;
+}
+
+.Boxitem:hover {
+  box-shadow: 0 0 10px #f0a500;
+}
+
+#item-svg {
+  width: 100%;
+  margin-top: 15px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+}
+
+.item-Details {
+  margin-top: 15px;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Boxitem svg {
+  border-radius: 15px;
+  padding: 8px;
+  background-color: #f0a500;
+}
+
+#Product {
+  width: 16px;
+}
+
+#Boxtitle {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+#counter {
+  font-family: "Work Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #f0a500;
+}
+
+.middleLayer {
+  width: 1000px;
+  margin-top: 10px;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: yellow; */
+}
+
+.right,
+.left {
+  width: 490px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #393e46;
+}
+
+.Middle-Header {
+  width: 490px;
+  height: 50px;
+  background-color: #393e46;
+  color: white;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.Middle-Header span {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+.wrapper {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.insideWrapper {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  /* justify-content: space-around; */
+}
+.productImage {
+  /* width: 100px;
+  height: 100px; */
+  margin-left: 30px;
+}
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-left: 30px;
+}
+
+.productImage img {
+  width: 50px;
+}
+.price {
+  /* margin-left: 100px; */
+  width: 100px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+}
+
+#prductName {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+}
+
+#productD {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  color: rgb(95, 95, 95);
+}
+
+.lastLayer {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: yellow; */
+}
+
+.box {
+  width: 320px;
+  height: 400px;
+}
+
+.Dbox {
+  width: 490px;
+  height: 400px;
+}
+
+.lastWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 280px;
+  justify-content: space-around;
+}
+
+.lastHeader {
+  width: 100%;
+  height: 50px;
+  background-color: #393e46;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.lastHeader span {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

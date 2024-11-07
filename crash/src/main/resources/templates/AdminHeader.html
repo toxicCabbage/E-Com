@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../static/css/AllProduct.css"
+      th:href="@{/css/AllProduct.css}"
+    />
+
+    <link
+    rel="stylesheet"
+    href="../static/css/sellerHeader.css"
+    th:href="@{/css/sellerHeader.css}"
+  />
+
+    <title>Seller</title>
+  </head>
+  <body>
+    <div class="Navigation" th:fragment="Adminheader">
+      <div class="inner-Navigation">
+        <a href="#" th:href="@{/Seller/}">
+          <div id="Headertitle">Flash <span>DEAL</span></div></a
+        >
+        <div class="innerlinks">
+          
+          <a href="#" th:href="@{/createWallet}">
+            <svg
+              version="1.1"
+              id="Product"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 458.531 458.531"
+              style="enable-background: new 0 0 458.531 458.531"
+              xml:space="preserve"
+            >
+              <title>Wallet</title>
+              <g id="XMLID_830_">
+                <g>
+                  <g>
+                    <path
+                      d="M336.688,343.962L336.688,343.962c-21.972-0.001-39.848-17.876-39.848-39.848v-66.176
+      c0-21.972,17.876-39.847,39.848-39.847h103.83c0.629,0,1.254,0.019,1.876,0.047v-65.922c0-16.969-13.756-30.725-30.725-30.725
+      H30.726C13.756,101.49,0,115.246,0,132.215v277.621c0,16.969,13.756,30.726,30.726,30.726h380.943
+      c16.969,0,30.725-13.756,30.725-30.726v-65.922c-0.622,0.029-1.247,0.048-1.876,0.048H336.688z"
+                    />
+                    <path
+                      d="M440.518,219.925h-103.83c-9.948,0-18.013,8.065-18.013,18.013v66.176c0,9.948,8.065,18.013,18.013,18.013h103.83
+      c9.948,0,18.013-8.064,18.013-18.013v-66.176C458.531,227.989,450.466,219.925,440.518,219.925z M372.466,297.024
+      c-14.359,0-25.999-11.64-25.999-25.999s11.64-25.999,25.999-25.999c14.359,0,25.999,11.64,25.999,25.999
+      C398.465,285.384,386.825,297.024,372.466,297.024z"
+                    />
+                    <path
+                      d="M358.169,45.209c-6.874-20.806-29.313-32.1-50.118-25.226L151.958,71.552h214.914L358.169,45.209z"
+                    />
+                  </g>
+                </g>
+              </g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+              <g></g>
+            </svg>
+          </a>
+          <div class="user">
+            <svg
+              class="svg"
+              id="userEle"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+            >
+              <title>user</title>
+              <path
+                d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"
+              ></path>
+            </svg>
+            <div class="proList" id="userList">
+              <a href="#" th:href="@{/login}">Sign IN</a>
+              <a href="#" th:href="@{/add_user}">Sign UP</a>
+              <a href="#" th:href="@{/logout}">Log Out </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="../static/js/SellerHeader.js"
+      th:src="@{/js/SellerHeader.js}"
+    ></script>
+  </body>
+</html>
+<!-- th:src="@{/js/header.js}" -->

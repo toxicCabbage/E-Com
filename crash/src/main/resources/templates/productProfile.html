@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/productProfile.css"
+      th:href="@{/css/productProfile.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/css/header.css"
+      th:href="@{/css/header.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.css"
+      th:href="@{/jquery-ui/jquery-ui.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.structure.css"
+      th:href="@{/jquery-ui/jquery-ui.structure.css}"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/jquery-ui/jquery-ui.theme.css"
+      th:href="@{/jquery-ui/jquery-ui.theme.css}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header" id="stayAtTop" th:include="header::header"></div>
+
+    <div class="weapAll">
+      <div class="wrap">
+        <div disabled class="filterSection" disable="true">
+          <div class="filterHeading gap">
+            <span id="h1">Filter</span>
+            <span id="clear">Remove</span>
+          </div>
+          <div class="categories gap">
+            <span id="cate">Categories</span>
+            <span id="dropDown">Sub Categories</span>
+            <div class="items">
+              <a href="#">Headphone</a>
+              <a href="#">Phone</a>
+              <a href="#">Spekers</a>
+            </div>
+          </div>
+          <div class="Fprice gap">
+            <span id="ph">Price</span>
+            <div class="selectPrice">
+              <select name="PriceSelection" id="MinPrice">
+                <option value="0">Min</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
+              </select>
+
+              <span>to</span>
+
+              <select name="PriceSelection" id="MaxPrice">
+                <option value="200000">Max</option>
+                <option value="5000">5000</option>
+                <option value="10000">10000</option>
+                <option value="50000">50000</option>
+                <option value="100000">100000</option>
+              </select>
+            </div>
+          </div>
+          <div class="ratings gap">
+            <span>Ratings</span>
+            <div class="wrapCheckbox">
+              <input type="checkbox" id="four" name="Four" value="4" />
+              <label for="four">4 and Above</label>
+
+              <input type="checkbox" id="three" name="Three" value="3" />
+              <label for="three">3 and Above</label>
+
+              <input type="checkbox" id="two" name="Two" value="2" />
+              <label for="two">2 and Above</label>
+
+              <input type="checkbox" id="one" name="One" value="1" />
+              <label for="one">1 and Above</label>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="pageheader">
+            <span class="headerText">Electronics</span>
+          </div>
+          <div class="sorting">
+            <span>Sort by : </span>
+            <a
+              href="#"
+              th:href="@{'/electronic/'+ ${currentPage} + '?sortField=productName&sortDir=' + ${asc}}"
+              >Name a - z</a
+            >
+            <a
+              href="#"
+              th:href="@{'/electronic/'+ ${currentPage} + '?sortField=productName&sortDir=' + ${desc}}"
+              >Name z - a</a
+            >
+            <a
+              href="#"
+              th:href="@{'/electronic/'+ ${currentPage} + '?sortField=productPrice&sortDir=' + ${asc}}"
+              >Price Low to High</a
+            >
+            <a
+              href="#"
+              th:href="@{'/electronic/'+ ${currentPage} + '?sortField=productPrice&sortDir=' + ${desc}}"
+              >Price High to Low</a
+            >
+          </div>
+          <div class="cardContainer">
+            <a
+              href="#"
+              th:href="@{/productProfile/{pId}(pId=${info.productid})}"
+              th:each="info: ${prouctInfo}"
+            >
+              <div class="card">
+                <div class="productImg">
+                  <img
+                    src="../../../../../../image/Logitec.jpg"
+                    th:src="@{${info.productImgUrl0}}"
+                    alt=""
+                  />
+                </div>
+                <div class="productDetail">
+                  <span class="name" th:text="${info.productName}"></span>
+                  <!-- th:onclick=" 'javascript:redirect(\'' + ${info.productid} + '\');' " -->
+
+                  <span class="price" th:text="|${info.productPrice}  &#8377|"></span>
+                  <span class="secondryDetail" th:text="${info.miniDes}"></span>
+                </div>
+              </div>
+            </a> 
+          </div>
+          <div class="indexOuter">
+            <div class="index">
+              <span th:each="i : ${#numbers.sequence(1,totalPages)}">
+                <a
+                id="he"
+                  href="#"
+                  th:if="${currentPage != i}"
+                  th:href="@{'/electronic/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+                  ><div class="indexBlock">[[${i}]]</div></a
+                >
+                <a href="#" th:if="${currentPage == i}"
+                  ><div class="indexBlock">[[${i}]]</div></a
+                >
+              </span>
+
+              <span>
+                <a
+                  href="#"
+                  th:if="${currentPage < totalPages}"
+                  th:href="@{'/electronic/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+                  ><div class="indexBlock">N</div></a
+                >
+                <a href="#" th:unless="${currentPage < totalPages}"
+                  ><div class="indexBlock">N</div></a
+                >
+              </span>
+
+              <span>
+                <a
+                  href="#"
+                  th:if="${currentPage > 1}"
+                  th:href="@{'/electronic/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}"
+                  ><div class="indexBlock">P</div></a
+                >
+                <a href="#" th:unless="${currentPage > 1}"
+                  ><div class="indexBlock">P</div></a
+                >
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="currentPage" th:value="${currentPage}" />
+    <input type="hidden" id="sortDir" th:value="${sortDir}" />
+    <input type="hidden" id="sortField" th:value="${sortField}" />
+
+    <script th:src="@{/js.jquery.js}" src="../static/js/jquery.js"></script>
+
+    <script
+      th:inline="javascript"
+      src="../static/js/productProfile.js"
+      th:src="@{/js/productProfile.js}"
+    ></script>
+
+    <script
+      src="../static/js/ProductPriceRange.js"
+      th:src="@{/js/ProductPriceRange.js}"
+    ></script>
+    <!-- <script  th:src="@{/js/header.js}" src="../static/js/header.js"></script> -->
+  </body>
+</html>
+<!-- th:href="@{${title} +'/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}" -->
